@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #12090D;
+    color: #2D141C;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Canva Borcelle Gradient Themes */
+.bg-canva-gradient {
+  background: linear-gradient(135deg, #FFA057 0%, #FF5A36 45%, #7B1728 100%);
+}
+
+.bg-canva-gradient-card {
+  background: linear-gradient(180deg, #FF9550 0%, #FF5A36 50%, #7E182A 100%);
+}
+
+.bg-canva-gradient-warm {
+  background: linear-gradient(90deg, #FFA057 0%, #FF5A36 100%);
+}
+
+/* Subtle Dotted Grid Texture from Canva Cover */
+.bg-canva-dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.22) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.bg-canva-dots-dark {
+  background-image: radial-gradient(circle, rgba(123, 23, 40, 0.12) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Print Styles for PDF */
+@media print {
+  @page {
+    size: 16in 9in;
+    margin: 0;
+  }
+  
+  html, body, #root {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+    background: #FFFFFF !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-page {
+    page-break-after: always !important;
+    break-after: page !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+  }
+}
